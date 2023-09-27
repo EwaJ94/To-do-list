@@ -1,0 +1,44 @@
+aside {
+    width: 33.333%;
+    background-color: rgb(75, 85, 99);
+    border-right: 3px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin: 0.5rem;
+    color: rgb(216, 224, 228);
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 12rem;
+    background-color: #037979;
+    border: 2px solid #012a2a;
+    border-radius: 20px;
+    font-weight: 650;
+    font-size: 0.95rem;
+    color: rgb(19, 20, 20);
+    cursor: pointer;
+    outline: none;
+
+}
+
+button:hover,
+button:active {
+    background-color: #0CABA8;
+    border: 2px solid #024f4e;
+}
