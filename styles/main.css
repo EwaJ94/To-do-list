@@ -34,7 +34,8 @@ h1 {
 
 /* SCROLLBAR */
 .scrollbar {
-   overflow: scroll;
+   overflow-y: scroll;
    height: 30rem;
    border: 1.5px solid black;
+   
 }
