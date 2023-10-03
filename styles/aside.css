@@ -1,13 +1,7 @@
 aside {
     width: 33.333%;
-    background-color: rgb(75, 85, 99);
+    background-color: #adadad;
     border-right: 3px solid black;
-}
-
-h1 {
-    text-align: center;
-    margin: 0.5rem;
-    color: rgb(216, 224, 228);
 }
 
 /* BUTTONS */
@@ -17,7 +11,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 3rem;
+    margin: 3.6rem 0;
 }
 button {
     display: block;
@@ -26,12 +20,12 @@ button {
     margin-top: 2rem;
     padding: 1rem;
     width: 12rem;
-    background-color: #037979;
-    border: 2px solid #012a2a;
+    background-color: #32b2b0;
+    border: 2px solid #035858;
     border-radius: 20px;
     font-weight: 650;
     font-size: 0.95rem;
-    color: rgb(19, 20, 20);
+    color: rgb(20, 20, 20);
     cursor: pointer;
     outline: none;
     text-transform: uppercase;
@@ -39,6 +33,6 @@ button {
 
 button:hover,
 button:active {
-    background-color: #0CABA8;
-    border: 2px solid #024f4e;
+    background-color: #2fd5d2;
+    border: 2px solid #035858;
 }

@@ -1,5 +1,5 @@
 main {
-    background-color: rgb(44, 55, 71);
+    background-color: #818181;
     width: 66.666%;
     
 }
@@ -7,7 +7,7 @@ main {
 h1 {
     text-align: center;
     margin: 0.8rem;
-    color: rgb(10, 10, 10);
+    color: rgb(20, 20, 20);
 }
 
 /* TASKS AREA */
@@ -15,8 +15,8 @@ h1 {
     background-color: rgb(238, 245, 243);
     height: 30rem;
     width: 32rem;
-    margin-left: 0.7rem;
-    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .my-tasks ul {
@@ -37,5 +37,5 @@ h1 {
    overflow-y: scroll;
    height: 30rem;
    border: 1.5px solid black;
-   
 }
+

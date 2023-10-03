@@ -46,7 +46,33 @@ saveTask.addEventListener("click", function(){
 // })
 
 // OPEN TO DO LIST
-// openList.addEventListener("click", function(){
+openList.addEventListener("click", function(){
+    // vyčištění okna a potom otevření listu
 
-// })
+    let myToDoList = localStorage.getItem("tasks")
+    let myToDoListJ = JSON.parse(myToDoList)
+
+        toDoList.forEach(function(oneTask){
+        let mylist = document.createElement("li")
+        let myinput = document.createElement("input")
+
+        myinput.type = "text"
+
+        // newLi.appendChild(newText)
+        // myList.appendChild(newLi)
+
+        // mylist.textContent = myinput
+        myinput.textContent = oneTask
+        mylist.textContent = myinput
+
+        document.querySelector(".task").appendChild(myinput)
+        
+
+    })
+})
+
+// REMOVE ALL
+removeAllTasks.addEventListener("click", function(){
+    localStorage.clear()
+})
 
