@@ -15,20 +15,23 @@ if(localStorage.getItem("tasks") === null){
 }
 
 // CREATE NEW TASK
-newTask.addEventListener("click", function(){
-    
+newTask.addEventListener("click", function(event){
+
     let newLi = document.createElement("li")
     let newText = document.createElement("input")
-    
+
     newText.type = "text"
-    newText.id = "one-task"
+    newText.class = "one-task"
     newLi.appendChild(newText)
     myList.appendChild(newLi)
+    newText.focus()
+    
 
     newText.addEventListener("change", function(event){
         let addNewTask = event.target.value
         toDoList.push(addNewTask)
         })
+
     })
 
 
@@ -72,6 +75,8 @@ openList.addEventListener("click", function(){
 })
 
 // REMOVE ALL
+
+
 removeAllTasks.addEventListener("click", function(){
     localStorage.clear()
 })
