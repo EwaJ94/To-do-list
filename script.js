@@ -54,21 +54,24 @@ openList.addEventListener("click", function(){
 
     let myToDoList = localStorage.getItem("tasks")
     let myToDoListJ = JSON.parse(myToDoList)
+    // console.log(myToDoListJ)
+    myToDoListJ.forEach(function(oneTask){
 
-        toDoList.forEach(function(oneTask){
-        let mylist = document.createElement("li")
-        let myinput = document.createElement("input")
+        let newLi = document.createElement("li")
+        let newText = document.createElement("input")
 
-        myinput.type = "text"
+        newText.type = "text"
+        newText.class = "one-task"
+        newText.textContent = oneTask
+        newLi.appendChild(newText)
+        myList.appendChild(newLi)
 
-        // newLi.appendChild(newText)
-        // myList.appendChild(newLi)
+        
+       
+        
+        
 
-        // mylist.textContent = myinput
-        myinput.textContent = oneTask
-        mylist.textContent = myinput
-
-        document.querySelector(".task").appendChild(myinput)
+        
         
 
     })
