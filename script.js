@@ -4,7 +4,7 @@ let deleteTask = document.querySelector(".delete")
 let openList = document.querySelector(".open-list")
 let removeAllTasks = document.querySelector(".remove-all")
 let myTasks = document.querySelector(".my-tasks")
-// let oneTask = document.querySelector(".one-task")
+let oneTask = document.querySelector("#one-to-do")
 
 // EXISTING LS CONDITION
 if(localStorage.getItem("tasks") === null){
@@ -16,32 +16,33 @@ if(localStorage.getItem("tasks") === null){
 // CREATE NEW TASK
 newTask.addEventListener("click", function(event){
 
-    let newLabel = document.createElement("label")
+    let newDiv = document.createElement("div")
+    let newToDo = document.createElement("input")
     let newCheck = document.createElement("input")
 
+    newDiv.id = "one-to-do"
+    newToDo.type = "text"
+    newToDo.id = "one-new-task"
     newCheck.type = "checkbox"
     newCheck.id = "one-check"
-    newLabel.setAttribute = ("for", "one-check")
-    newLabel.textContent = "new"
-    myTasks.appendChild(newCheck)
-    myTasks.appendChild(newLabel)
-    newLabel.focus()
+    newDiv.appendChild(newCheck)
+    newDiv.appendChild(newToDo)
+    myTasks.appendChild(newDiv)
+    newToDo.focus()
     
 
-    newText.addEventListener("change", function(event){
+    newToDo.addEventListener("change", function(event){
         let addNewTask = event.target.value
         toDoList.push(addNewTask)
         })
-
     })
 
 
 // SAVE NEW TASK TO LOCAL STORAGE
 saveTask.addEventListener("click", function(){
-            let toDoListJ = JSON.stringify(toDoList)
-            localStorage.setItem("tasks", toDoListJ)
-            
-            
+    let toDoListJ = JSON.stringify(toDoList)
+    localStorage.setItem("tasks", toDoListJ)
+    console.log(toDoListJ)               
 });
 
 // DELETE TASK 
@@ -51,25 +52,32 @@ saveTask.addEventListener("click", function(){
 
 // OPEN TO DO LIST
 openList.addEventListener("click", function(){
-   
+
     let myToDoList = localStorage.getItem("tasks")
     let myToDoListJ = JSON.parse(myToDoList)
+
     
     myToDoListJ.forEach(function(oneTask){
 
-        let newLi = document.createElement("li")
-        let newText = document.createElement("input")
+        let newDiv = document.createElement("div")
+        let newToDo = document.createElement("input")
+        let newCheck = document.createElement("input")
 
-        newText.type = "text"
-        newText.class = "one-task"
-        newText.textContent = oneTask
+        newDiv.id = "one-to-do"
+        newToDo.type = "text"
+        newToDo.id = "one-new-task"
+        newCheck.type = "checkbox"
+        newCheck.id = "one-check"
 
+        let currentValue = newToDo.value;
+        let newText = oneTask;
+        let updatedValue = currentValue + newText;
+    
+        newToDo.value = updatedValue;
 
-        newLi.appendChild(newText)
-        myList.appendChild(newLi)
-
-        
-        
+        newDiv.appendChild(newCheck)
+        newDiv.appendChild(newToDo)
+        myTasks.appendChild(newDiv)
 
     })
 })
@@ -79,6 +87,6 @@ openList.addEventListener("click", function(){
 
 removeAllTasks.addEventListener("click", function(){
     localStorage.clear()
-    myList.remove()
+    oneTask.clear()
 })
 
