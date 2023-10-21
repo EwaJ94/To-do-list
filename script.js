@@ -5,6 +5,7 @@ let openList = document.querySelector(".open-list")
 let removeAllTasks = document.querySelector(".remove-all")
 let myTasks = document.querySelector(".my-tasks")
 let oneTask = document.querySelector("#one-to-do")
+let oneCheck = document.querySelector("#one-check")
 
 // EXISTING LS CONDITION
 if(localStorage.getItem("tasks") === null){
@@ -47,7 +48,13 @@ saveTask.addEventListener("click", function(){
 
 // DELETE TASK 
 // deleteTask.addEventListener("click", function(){
-
+//     oneCheck.addEventListener("change", function(event){
+//         let done = event.target.checked
+//         console.log(done)
+//         if (done === true) {
+//             oneCheck.remove()
+//         }
+//     })
 // })
 
 // OPEN TO DO LIST
@@ -87,6 +94,6 @@ openList.addEventListener("click", function(){
 
 removeAllTasks.addEventListener("click", function(){
     localStorage.clear()
-    oneTask.clear()
+    
 })
 
